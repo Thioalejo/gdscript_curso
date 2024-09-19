@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=3 uid="uid://dy6b1avo0crnp"]
+
+[ext_resource type="Texture2D" uid="uid://cdhtu684yhjn3" path="res://assets/base.png" id="1_ymrm8"]
+[ext_resource type="Texture2D" uid="uid://dqsjwrko8itkq" path="res://icon.svg" id="2_w4nkn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_os6x4"]
+size = Vector2(336, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjbs3"]
+size = Vector2(73, 73)
+
+[node name="Level 1" type="Node2D"]
+
+[node name="Plataforma" type="StaticBody2D" parent="."]
+position = Vector2(-522, 494)
+scale = Vector2(4.04, 1)
+metadata/_edit_group_ = true
+
+[node name="Base" type="Sprite2D" parent="Plataforma"]
+position = Vector2(261, 94)
+texture = ExtResource("1_ymrm8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma"]
+position = Vector2(261, 95)
+shape = SubResource("RectangleShape2D_os6x4")
+
+[node name="Plataforma2" type="StaticBody2D" parent="."]
+position = Vector2(337, 349)
+scale = Vector2(0.8, 1)
+metadata/_edit_group_ = true
+
+[node name="Base" type="Sprite2D" parent="Plataforma2"]
+position = Vector2(261, 94)
+texture = ExtResource("1_ymrm8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma2"]
+position = Vector2(261, 95)
+shape = SubResource("RectangleShape2D_os6x4")
+
+[node name="Plataforma3" type="StaticBody2D" parent="."]
+position = Vector2(676, 252)
+scale = Vector2(0.8, 1)
+metadata/_edit_group_ = true
+
+[node name="Base" type="Sprite2D" parent="Plataforma3"]
+position = Vector2(261, 94)
+texture = ExtResource("1_ymrm8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma3"]
+position = Vector2(261, 95)
+shape = SubResource("RectangleShape2D_os6x4")
+
+[node name="Plataforma4" type="StaticBody2D" parent="."]
+position = Vector2(983, 119)
+scale = Vector2(0.8, 1)
+metadata/_edit_group_ = true
+
+[node name="Base" type="Sprite2D" parent="Plataforma4"]
+position = Vector2(261, 94)
+texture = ExtResource("1_ymrm8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma4"]
+position = Vector2(261, 95)
+shape = SubResource("RectangleShape2D_os6x4")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(-110, 79)
+metadata/_edit_group_ = true
+
+[node name="Icon" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(177, 408)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_w4nkn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(177.5, 408.5)
+shape = SubResource("RectangleShape2D_mjbs3")

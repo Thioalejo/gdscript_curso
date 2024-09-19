@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+const SPEED = 200.0
 const JUMP_VELOCITY = -600.0
 
 
@@ -10,8 +10,20 @@ const JUMP_VELOCITY = -600.0
 func _process(delta):
 	if velocity.x == 0:
 		animacion.play("Idle")
-	else:
-		animacion.stop()
+	if velocity.x > 0 and is_on_floor():
+		animacion.flip_h = false
+		animacion.play("Walk")
+	if velocity.x < 0 and is_on_floor():
+		animacion.flip_h = true
+		animacion.play("Walk")
+	if not is_on_floor():
+		animacion.play("Jump")
+
+		
+		
+	
+	
+	
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

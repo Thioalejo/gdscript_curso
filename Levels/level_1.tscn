@@ -1,14 +1,43 @@
-[gd_scene load_steps=6 format=3 uid="uid://dy6b1avo0crnp"]
+[gd_scene load_steps=10 format=3 uid="uid://dy6b1avo0crnp"]
 
 [ext_resource type="Texture2D" uid="uid://cdhtu684yhjn3" path="res://assets/base.png" id="1_ymrm8"]
 [ext_resource type="Script" path="res://Scripts/personaje.gd" id="2_e3s17"]
-[ext_resource type="Texture2D" uid="uid://dqsjwrko8itkq" path="res://icon.svg" id="2_w4nkn"]
+[ext_resource type="Texture2D" uid="uid://dggajhj64s013" path="res://assets/idle.png" id="3_7flsb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_os6x4"]
 size = Vector2(336, 110)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mjbs3"]
-size = Vector2(73, 73)
+size = Vector2(48, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbioq"]
+atlas = ExtResource("3_7flsb")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6248"]
+atlas = ExtResource("3_7flsb")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dydx0"]
+atlas = ExtResource("3_7flsb")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k5oax"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbioq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6248")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dydx0")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
 
 [node name="Level 1" type="Node2D"]
 
@@ -82,11 +111,12 @@ position = Vector2(-110, 79)
 script = ExtResource("2_e3s17")
 metadata/_edit_group_ = true
 
-[node name="Icon" type="Sprite2D" parent="Personaje"]
-position = Vector2(177, 408)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("2_w4nkn")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Personaje"]
-position = Vector2(177.5, 408.5)
+position = Vector2(175, 419.5)
 shape = SubResource("RectangleShape2D_mjbs3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Personaje"]
+texture_filter = 1
+position = Vector2(175, 391)
+sprite_frames = SubResource("SpriteFrames_k5oax")
+animation = &"Idle"

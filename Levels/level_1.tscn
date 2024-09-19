@@ -1,5 +1,6 @@
-[gd_scene load_steps=28 format=3 uid="uid://dy6b1avo0crnp"]
+[gd_scene load_steps=29 format=3 uid="uid://dy6b1avo0crnp"]
 
+[ext_resource type="Texture2D" uid="uid://bslrhjn72glny" path="res://assets/bg.png" id="1_h20br"]
 [ext_resource type="Texture2D" uid="uid://cdhtu684yhjn3" path="res://assets/base.png" id="1_ymrm8"]
 [ext_resource type="Script" path="res://Scripts/personaje.gd" id="2_e3s17"]
 [ext_resource type="Texture2D" uid="uid://dggajhj64s013" path="res://assets/idle.png" id="3_7flsb"]
@@ -160,10 +161,15 @@ animations = [{
 }],
 "loop": true,
 "name": &"Walk",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [node name="Level 1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(577, 323)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_h20br")
 
 [node name="Plataforma" type="StaticBody2D" parent="."]
 position = Vector2(-522, 494)
@@ -192,7 +198,7 @@ position = Vector2(261, 95)
 shape = SubResource("RectangleShape2D_os6x4")
 
 [node name="Plataforma3" type="StaticBody2D" parent="."]
-position = Vector2(676, 252)
+position = Vector2(638, 285)
 scale = Vector2(0.8, 1)
 metadata/_edit_group_ = true
 
@@ -205,7 +211,7 @@ position = Vector2(261, 95)
 shape = SubResource("RectangleShape2D_os6x4")
 
 [node name="Plataforma4" type="StaticBody2D" parent="."]
-position = Vector2(983, 119)
+position = Vector2(939, 211)
 scale = Vector2(0.8, 1)
 metadata/_edit_group_ = true
 
@@ -218,7 +224,7 @@ position = Vector2(261, 95)
 shape = SubResource("RectangleShape2D_os6x4")
 
 [node name="Plataforma5" type="StaticBody2D" parent="."]
-position = Vector2(668, 8)
+position = Vector2(554, 70)
 scale = Vector2(0.8, 1)
 metadata/_edit_group_ = true
 
@@ -242,5 +248,6 @@ shape = SubResource("RectangleShape2D_mjbs3")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Personaje"]
 texture_filter = 1
 position = Vector2(175, 391)
+scale = Vector2(0.934462, 0.967459)
 sprite_frames = SubResource("SpriteFrames_k5oax")
 animation = &"Walk"
